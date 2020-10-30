@@ -3,7 +3,10 @@ import "./App.css";
 function App() {
   return (
     <main>
-      <input className="input" type="text" />
+      <form>
+        <input className="input" type="text" />
+        <button className="btn_primary">+</button>
+      </form>
     </main>
   );
 }
