@@ -1,12 +1,10 @@
 import "./App.css";
+import FormElement from "./components/Form";
 
 function App() {
   return (
     <main>
-      <form>
-        <input className="input" type="text" />
-        <button className="btn_primary">+</button>
-      </form>
+      <FormElement />
     </main>
   );
 }
