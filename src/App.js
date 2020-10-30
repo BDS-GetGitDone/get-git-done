@@ -9,7 +9,7 @@ function App() {
 
   return (
     <main>
-      <FormElement />
+      <FormElement setCurrentToDos={setCurrentToDos} />
       <ListElement toDoItems={currentToDos} />
     </main>
   );
