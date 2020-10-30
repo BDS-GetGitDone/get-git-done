@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getToDos } from "../utils/storage";
+import "./Form.css";
 
 export default function FormElement() {
   const handleSumbit = (e) => {
@@ -16,7 +17,7 @@ export default function FormElement() {
   };
 
   return (
-    <form onSubmit={handleSumbit}>
+    <form className="form" onSubmit={handleSumbit}>
       <input
         onChange={handleChange}
         value={inputText}

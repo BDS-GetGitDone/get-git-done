@@ -3,7 +3,7 @@ import FormElement from "./components/Form";
 
 function App() {
   return (
-    <main>
+    <main className="main">
       <FormElement />
     </main>
   );
