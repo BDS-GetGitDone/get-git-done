@@ -1,18 +1,28 @@
 import { useState } from "react";
+import { getToDos } from "../utils/storage";
 
 export default function FormElement() {
   const handleSumbit = (e) => {
     e.preventDefault();
-    localStorage.setItem("todos", inputText);
+    const toDos = getToDos();
+    const newToDos = [...toDos, inputText];
+    setInputText("");
+    localStorage.setItem("todos", JSON.stringify(newToDos));
   };
   const [inputText, setInputText] = useState("");
+
+  const handleChange = (e) => {
+    setInputText(e.target.value);
+  };
 
   return (
     <form onSubmit={handleSumbit}>
       <input
-        onChange={(e) => setInputText(e.target.value)}
+        onChange={handleChange}
+        value={inputText}
         className="input"
         type="text"
+        required="true"
       />
       <button className="btn_primary">+</button>
     </form>
