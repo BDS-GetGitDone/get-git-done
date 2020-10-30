@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: white;
+  --secondary-color: rgb(34, 171, 189);
+  --tertiary-color: #330867;
+}
 body {
   margin: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background-repeat: no-repeat;
+  text-align: center;
+  color: var(--secondary-color);
+  font-family: "Comfortaa";
+  font-weight: 400;
+}
+
+h1 {
+  font-family: "Comfortaa";
+  font-weight: 700;
 }

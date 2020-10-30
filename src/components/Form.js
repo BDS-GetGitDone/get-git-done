@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getToDos } from "../utils/storage";
+import "./Form.css";
 
 export default function FormElement({ setCurrentToDos }) {
   const handleSumbit = (e) => {
@@ -17,8 +18,9 @@ export default function FormElement({ setCurrentToDos }) {
   };
 
   return (
-    <form onSubmit={handleSumbit}>
+    <form className="form" onSubmit={handleSumbit}>
       <input
+        placeholder="Get this Git done"
         onChange={handleChange}
         value={inputText}
         className="input"

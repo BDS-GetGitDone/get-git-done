@@ -1,0 +1,19 @@
+.form {
+  display: block;
+  height: fit-content;
+  margin-top: 40px;
+}
+.input {
+  height: 30px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  border: none;
+}
+.btn_primary {
+  cursor: pointer;
+  height: 30px;
+  width: 25px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  border: none;
+}
