@@ -2,13 +2,14 @@ import { useState } from "react";
 import { getToDos } from "../utils/storage";
 import "./Form.css";
 
-export default function FormElement() {
+export default function FormElement({ setCurrentToDos }) {
   const handleSumbit = (e) => {
     e.preventDefault();
     const toDos = getToDos();
     const newToDos = [...toDos, inputText];
     setInputText("");
     localStorage.setItem("todos", JSON.stringify(newToDos));
+    setCurrentToDos(getToDos);
   };
   const [inputText, setInputText] = useState("");
 
