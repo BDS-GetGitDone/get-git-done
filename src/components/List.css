@@ -32,3 +32,7 @@
 .tickbox__btn:hover {
   color: #fff;
 }
+
+.check {
+  background-color: hotpink;
+}
