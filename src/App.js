@@ -9,7 +9,7 @@ function App() {
 
   return (
     <main>
-      <h1>BeDoSis GetGitDone</h1>
+      <h1>GetGitDone</h1>
       <FormElement setCurrentToDos={setCurrentToDos} />
       <ListElement toDoItems={currentToDos} setCurrentToDos={setCurrentToDos} />
     </main>
