@@ -10,8 +10,29 @@
 }
 
 .list_item {
-  border-bottom: 1px solid white;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.726);
   padding: 5px;
   color: var(--tertiary-color);
   margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.tickbox {
+  height: 25px;
+}
+
+.tickbox__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: fit-content;
+  width: fit-content;
+  padding: 0;
+}
+.tickbox__btn:hover {
+  color: #fff;
+}
+
+.check {
+  background-color: hotpink;
 }

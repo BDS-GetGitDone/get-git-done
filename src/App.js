@@ -11,7 +11,7 @@ function App() {
     <main>
       <h1>BeDoSis GetGitDone</h1>
       <FormElement setCurrentToDos={setCurrentToDos} />
-      <ListElement toDoItems={currentToDos} />
+      <ListElement toDoItems={currentToDos} setCurrentToDos={setCurrentToDos} />
     </main>
   );
 }
