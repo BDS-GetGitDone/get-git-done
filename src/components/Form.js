@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getToDos } from "../utils/storage";
 import "./Form.css";
+import plus from "../assets/plus.svg";
 
 export default function FormElement({ setCurrentToDos }) {
   const handleSumbit = (e) => {
@@ -27,7 +28,9 @@ export default function FormElement({ setCurrentToDos }) {
         type="text"
         required="true"
       />
-      <button className="btn_primary">+</button>
+      <button className="btn_primary">
+        <img src={plus} alt="" />
+      </button>
     </form>
   );
 }

@@ -1,8 +1,11 @@
 .list {
   list-style: none;
-  margin: 10px auto;
-  max-width: 200px;
+  margin: 50px auto;
+  max-width: 600px;
   padding: 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 1.5rem;
 }
 
 .list > :last-child {
@@ -10,10 +13,8 @@
 }
 
 .list_item {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.726);
+  border-bottom: 1px dashed rgba(173, 173, 173, 0.726);
   padding: 5px;
-  color: var(--tertiary-color);
-  margin: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -34,5 +35,10 @@
 }
 
 .check {
-  background-color: hotpink;
+  background-color: rgb(22, 112, 0);
+}
+
+.list__text {
+  padding-top: 5px;
+  color: var(--tertiary-color);
 }

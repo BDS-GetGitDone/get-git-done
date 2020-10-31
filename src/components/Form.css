@@ -8,6 +8,9 @@
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
   border: none;
+  padding: 0.5rem;
+  width: 200px;
+  text-align: center;
 }
 .btn_primary {
   cursor: pointer;
