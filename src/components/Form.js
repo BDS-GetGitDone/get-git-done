@@ -7,7 +7,7 @@ export default function FormElement({ setCurrentToDos }) {
   const handleSumbit = (e) => {
     e.preventDefault();
     const toDos = getToDos();
-    const newToDos = [...toDos, inputText];
+    const newToDos = [...toDos, { text: inputText, done: false }];
     setInputText("");
     localStorage.setItem("todos", JSON.stringify(newToDos));
     setCurrentToDos(getToDos);

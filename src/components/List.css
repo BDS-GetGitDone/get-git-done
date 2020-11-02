@@ -18,6 +18,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .tickbox {
   height: 25px;
 }
@@ -41,4 +42,8 @@
 .list__text {
   padding-top: 5px;
   color: var(--tertiary-color);
+}
+
+.list__text--done {
+  text-decoration: line-through;
 }
