@@ -5,35 +5,35 @@ import { without } from "../utils/arrays";
 import trash from "../assets/trash.svg";
 
 export default function ListElement({ toDoItems, setCurrentToDos }) {
-  const handleDeleteClick = (text) => {
+  const handleDeleteClick = (id) => {
     const currentToDos = getToDos();
-    const newToDos = without(currentToDos, text);
+    const newToDos = without(currentToDos, id);
     localStorage.setItem("todos", JSON.stringify(newToDos));
     setCurrentToDos(newToDos);
   };
 
-  const handleDoneClick = (text) => {
+  const handleDoneClick = (id) => {
     const toDos = getToDos();
-    const todo = toDos.find((todo) => todo.text === text);
+    const todo = toDos.find((todo) => todo.id === id);
     todo.done = !todo.done;
     localStorage.setItem("todos", JSON.stringify(toDos));
     setCurrentToDos(toDos);
   };
 
-  const listItems = toDoItems.map(({ text, done }) => (
-    <li className="list_item" key={text}>
+  const listItems = toDoItems.map(({ id, text, done }) => (
+    <li className="list_item" key={id}>
       <button className="tickbox__btn">
         <img
           className="tickbox"
           src={tickbox}
           alt="check"
-          onClick={() => handleDoneClick(text)}
+          onClick={() => handleDoneClick(id)}
         />
       </button>
       <span className={done ? "list__text list__text--done" : "list__text"}>
         {text}
       </span>
-      <button className="tickbox__btn" onClick={() => handleDeleteClick(text)}>
+      <button className="tickbox__btn" onClick={() => handleDeleteClick(id)}>
         <img className="tickbox" src={trash} alt="trash" />
       </button>
     </li>
