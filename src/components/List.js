@@ -5,9 +5,9 @@ import { without } from "../utils/arrays";
 import trash from "../assets/trash.svg";
 
 export default function ListElement({ toDoItems, setCurrentToDos }) {
-  const handleDeleteClick = (todo) => {
+  const handleDeleteClick = (text) => {
     const currentToDos = getToDos();
-    const newToDos = without(currentToDos, todo);
+    const newToDos = without(currentToDos, text);
     localStorage.setItem("todos", JSON.stringify(newToDos));
     setCurrentToDos(newToDos);
   };
