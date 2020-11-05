@@ -5,32 +5,35 @@ import { without } from "../utils/arrays";
 import trash from "../assets/trash.svg";
 
 export default function ListElement({ toDoItems, setCurrentToDos }) {
-  const handleClick = (e) => {
-    e.preventDefault();
-    const item = e.target;
-    // const listItem = item.parentElement;
-    item.classList.toggle("check");
-  };
-
-  const handleDeleteClick = (todo) => {
+  const handleDeleteClick = (id) => {
     const currentToDos = getToDos();
-    const newToDos = without(currentToDos, todo);
+    const newToDos = without(currentToDos, id);
     localStorage.setItem("todos", JSON.stringify(newToDos));
     setCurrentToDos(newToDos);
   };
 
-  const listItems = toDoItems.map((todo) => (
-    <li className="list_item" key={todo}>
+  const handleDoneClick = (id) => {
+    const toDos = getToDos();
+    const todo = toDos.find((todo) => todo.id === id);
+    todo.done = !todo.done;
+    localStorage.setItem("todos", JSON.stringify(toDos));
+    setCurrentToDos(toDos);
+  };
+
+  const listItems = toDoItems.map(({ id, text, done }) => (
+    <li className="list_item" key={id}>
       <button className="tickbox__btn">
         <img
           className="tickbox"
           src={tickbox}
           alt="check"
-          onClick={handleClick}
+          onClick={() => handleDoneClick(id)}
         />
       </button>
-      <span className="list__text">{todo}</span>
-      <button className="tickbox__btn" onClick={() => handleDeleteClick(todo)}>
+      <span className={done ? "list__text list__text--done" : "list__text"}>
+        {text}
+      </span>
+      <button className="tickbox__btn" onClick={() => handleDeleteClick(id)}>
         <img className="tickbox" src={trash} alt="trash" />
       </button>
     </li>
